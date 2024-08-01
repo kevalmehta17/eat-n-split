@@ -86,12 +86,39 @@ function Friend({ friend }) {
 }
 
 function FormAddFriend() {
+  const [name, setName] = useState("");
+  const [img, setImg] = useState("https://i.pravatar.cc/48");
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    if (!name || !img) return;
+
+    const id = crypto.randomUUID();
+    const newFriend = {
+      id,
+      name,
+      img: `${img}?=${id}`,
+      balance: 0,
+    };
+    console.log(newFriend);
+    setName("");
+    setImg("https://i.pravatar.cc/48");
+  }
   return (
-    <form className="form-add-friend">
+    <form className="form-add-friend" onSubmit={handleSubmit}>
       <label>🧑‍🤝‍🧑Friend Name</label>
-      <input type="text"></input>
+      <input
+        type="text"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      ></input>
       <label>🌄 Image URL</label>
-      <input type="text"></input>
+      <input
+        type="text"
+        value={img}
+        onChange={(e) => setImg(e.target.value)}
+      ></input>
       <Button>Add</Button>
     </form>
   );
@@ -107,7 +134,7 @@ function FormSplitBill() {
       <input type="text"></input>
       <label>🧑‍🤝‍🧑 x's Expense</label>
       <input type="text" disabled></input>
-      <lable>🤑 Who is paying the Bill</lable>
+      <label>🤑 Who is paying the Bill</label>
       <select>
         <option value="user">You</option>
         <option value="friend">X</option>
