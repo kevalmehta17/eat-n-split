@@ -1,4 +1,22 @@
-This is the Simple Spliting Bill Landing Page
--> That uses the React State and Rendering Logic
-->Also the Good amount of Javascript Logic
-->This project i built for understating the Rendering and the state Hook Logic
+# Simple Splitting Bill Landing Page
+
+This is a simple splitting bill landing page built using React. The project aims to help understand React state and rendering logic, as well as to showcase a good amount of JavaScript logic.
+
+## Features
+
+- Utilizes React state and rendering logic
+- Implements a good amount of JavaScript logic
+
+## Purpose
+
+This project was built for understanding the rendering and the state hook logic in React.
+
+## Getting Started
+
+To get started with this project, clone the repository and install the necessary dependencies:
+
+```bash
+git clone <repository-url>
+cd simple-splitting-bill-landing-page
+npm install
+```
